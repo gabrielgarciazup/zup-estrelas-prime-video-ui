@@ -1,0 +1,22 @@
+.navbar__nav-links {
+
+    display: flex;
+
+    padding: 0 16px;
+
+    .nav-links__link {
+
+        width: auto;
+
+        margin: 8px;
+
+        color: $white-primary;
+
+        &:hover {
+            
+            cursor: pointer;
+
+            color: $white-secondary;
+        }
+    }
+}

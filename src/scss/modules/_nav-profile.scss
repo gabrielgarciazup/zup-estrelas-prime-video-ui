@@ -1,0 +1,48 @@
+.navbar__nav-profile {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: flex-end;
+
+    width: min-content;
+
+    cursor: pointer;
+
+    .nav-profile__image {
+
+        height: 32px;
+        width: 32px;
+
+        margin-left: 21px;
+
+    }
+
+    .nav-profile__username {
+
+        text-align: center;
+
+        max-width: 120px;
+
+        padding: 7px;
+
+        font-size: 15px;
+
+        color: rgba(242,244,246,.7);
+
+        &:hover {
+
+            color: $white-primary;
+
+        }
+    }
+
+    .nav-profile__arrow {
+
+        max-width: 9px;
+
+        opacity: 50%;
+
+    }
+
+}
