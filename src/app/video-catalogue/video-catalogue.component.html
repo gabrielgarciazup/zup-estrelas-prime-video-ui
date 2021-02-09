@@ -1,0 +1,29 @@
+<div class="video-section">
+
+    <ul class="video-catalogue">
+
+        <h1 class="video-catalogue__title">{{ catalogueTitle }}</h1>
+
+        <div class="video__container">
+
+            <li class="video" *ngFor="let movie of movies.results">
+
+                <img src="{{ imagesUrl }}{{ movie.backdrop_path }}" alt="" class="video__image">
+
+                <div class="video__info">
+
+                    <h2 class="video__title">{{ movie.original_title }}</h2>
+
+                    <p class="video__description">{{ movie.overview | truncate : [200, '...'] }}</p>
+
+                    <p class="video__year">{{ movie.release_date }}</p>
+
+                </div>
+
+            </li>
+
+        </div>
+
+    </ul>
+
+</div>

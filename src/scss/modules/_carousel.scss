@@ -1,100 +1,83 @@
 .carousel {
-
     width: 100%;
     height: auto;
-
-    position: relative;
 
     background: transparent;
 
     .carousel__images {
-
         width: 100%;
         height: auto;
 
-        position: absolute;
-
         .carousel__image {
-
             display: flex;
 
             width: 100%;
-            height: auto;
+            height: 300px;
 
-            position: absolute;
+            position: relative;
+
+            img {
+                object-fit: cover;
+                object-position: 50% 10%;
+            }
 
             .image__buttons {
-                
                 display: flex;
 
                 align-items: center;
                 justify-content: space-between;
 
                 width: 100%;
-                
+
                 position: absolute;
 
                 .image__button {
-
                     width: 4%;
 
                     background-size: 60%;
                     background-position: center;
                     background-repeat: no-repeat;
                     background-color: transparent;
-                    
+
                     filter: drop-shadow(0 0 5px #000);
-                    
+
                     border: none;
 
-                    transition: .4s ease;
+                    transition: $transition-primary;
 
                     &:hover {
-
                         outline: none;
 
                         border: none;
-
                     }
 
                     &:focus {
-
                         outline: none;
 
-                        border: none; 
-
+                        border: none;
                     }
-
                 }
 
                 #button__prev {
-
-                    background-image: url('../../assets/images/svg/prev.svg');
+                    background-image: url("../../assets/images/svg/prev.svg");
 
                     &:hover {
+                        background-color: rgba(17, 17, 17, 0.1);
 
-                        background-color: rgba(17,17,17,.1);
-
-                        transition: .4s ease;
-
+                        transition: $transition-primary;
                     }
                 }
 
                 #button__next {
-
-                    background-image: url('../../assets/images/svg/next.svg');
+                    background-image: url("../../assets/images/svg/next.svg");
 
                     &:hover {
+                        background-color: rgba(17, 17, 17, 0.1);
 
-                        background-color: rgba(17,17,17,.1);
-
-                        transition: .4s ease;
-
+                        transition: $transition-primary;
                     }
                 }
             }
-
         }
-
     }
 }

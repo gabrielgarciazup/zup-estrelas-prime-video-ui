@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  @Output() event = new EventEmitter<string>();
+
+  filteredVideosInput = 'tenet';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onKeyUp() {
+    this.event.emit(this.filteredVideosInput);
   }
 
 }

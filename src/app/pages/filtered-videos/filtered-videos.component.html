@@ -1,0 +1,33 @@
+<app-navbar (event)="receiveInputValue($event)"></app-navbar>
+
+<div class="video-section">
+
+    <ul class="filtered-catalogue">
+
+        <h1 class="filtered-catalogue__title">{{ amountOfVideos }} resultado(s) para "{{ filteredVideosInput }}".</h1>
+
+        <hr>
+
+        <div class="filtered__container">
+
+            <li class="filtered__video" *ngFor="let movie of filteredVideos.results">
+
+                <img src="{{ imagesUrl }}{{ movie.backdrop_path }}" alt="" class="filtered-video__image">
+
+                <div class="filtered-video__info">
+
+                    <h2 class="filtered-video__title">{{ movie.original_title }}</h2>
+
+                    <p class="filtered-video__description">{{ movie.overview | truncate : [200, '...'] }}</p>
+
+                    <p class="filtered-video__year">{{ movie.release_date }}</p>
+
+                </div>
+
+            </li>
+
+        </div>
+
+    </ul>
+
+</div>

@@ -1,5 +1,4 @@
 .navbar {
-
     display: flex;
 
     align-items: center;
@@ -16,4 +15,19 @@
 
     background-color: $blue-primary;
 
+    a {
+        color: $white-primary;
+
+        cursor: pointer;
+
+        text-decoration: none;
+    }
+
+    .active {
+        color: $white-primary;
+
+        font-weight: bold;
+
+        border-bottom: 1px solid $white-primary
+    }
 }

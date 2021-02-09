@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+
+<app-carousel></app-carousel>
+
+<app-video-catalogue
+    [movies]="nowPlayingMovies"
+    catalogueTitle="Filmes e séries para assistir a seguir">
+</app-video-catalogue>
+
+<app-video-catalogue
+    [movies]="popularMovies"
+    catalogueTitle="Séries Amazon Originals e exclusivos">
+</app-video-catalogue>
+
+<app-video-catalogue
+    [movies]="topRatedMovies"
+    catalogueTitle="Séries que achamos que você vai gostar">
+</app-video-catalogue>
+
+<app-video-catalogue
+    [movies]="upcomingMovies"
+    catalogueTitle="Filmes recomendados">
+</app-video-catalogue>
+
+<app-video-catalogue
+    [movies]="nowPlayingMovies"
+    catalogueTitle="Filmes em destaque">
+</app-video-catalogue>
+
+<app-video-catalogue
+    [movies]="popularMovies"
+    catalogueTitle="Filmes adicionados recentemente">
+</app-video-catalogue>

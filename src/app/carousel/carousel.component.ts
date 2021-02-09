@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-carousel',
@@ -7,29 +9,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarouselComponent implements OnInit {
 
-  constructor() { }
+  data: any = {
+    results: []
+  }
+
+  images: string[] = [];
+
+  imageIndex = 0;
+
+  constructor(private apiService: ApiService) {
+
+    apiService.get("movie/popular")
+      .subscribe((val) => {
+
+        console.log("Retornou ", val);
+        this.data = val;
+
+      }, (response) => {
+
+        console.log("Response ", response);
+      }, () => {
+
+        console.log("Fim");
+      });
+  }
 
   ngOnInit(): void {
   }
 
-  images: string[] = [
-    './assets/images/jpg/carousel_1.jpg',
-    './assets/images/jpg/carousel_2.jpg'
-  ];
-
-  imageIndex = 0;
 
   getImage() {
-    return this.images[this.imageIndex];
+    return this.data.results.length === 0 ? '' 
+    : environment.imageUrl + this.data.results[this.imageIndex].backdrop_path;
   }
 
   getPrev() {
-    this.imageIndex = this.imageIndex === 0 ? this.images.length - 1 : this.imageIndex - 1;
+    this.imageIndex = this.imageIndex === 0 ? this.data.results.length - 1 : this.imageIndex - 1;
   }
 
   getNext() {
 
-    if (this.imageIndex === this.images.length - 1) {
+    if (this.imageIndex === this.data.results.length - 1) {
       this.imageIndex = 0;
       return;
     }

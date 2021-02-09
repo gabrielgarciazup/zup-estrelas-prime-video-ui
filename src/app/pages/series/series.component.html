@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+
+<app-carousel></app-carousel>
+
+<app-video-catalogue
+    [movies]="nowPlayingMovies"
+    catalogueTitle="Séries para assistir a seguir">
+</app-video-catalogue>
+
+<app-video-catalogue
+    [movies]="popularMovies"
+    catalogueTitle="Séries Amazon Originals e exclusivos">
+</app-video-catalogue>
+
+<app-video-catalogue
+    [movies]="topRatedMovies"
+    catalogueTitle="Melhores séries">
+</app-video-catalogue>
+
+<app-video-catalogue
+    [movies]="upcomingMovies"
+    catalogueTitle="Séries de suspense">
+</app-video-catalogue>
+
+<app-video-catalogue
+    [movies]="nowPlayingMovies"
+    catalogueTitle="Séries adicionadas recentemente">
+</app-video-catalogue>
+
+<app-video-catalogue
+    [movies]="popularMovies"
+    catalogueTitle="Séries indicadas e premiadas com o Emmy">
+</app-video-catalogue>
