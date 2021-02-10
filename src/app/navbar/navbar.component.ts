@@ -9,7 +9,7 @@ export class NavbarComponent implements OnInit {
 
   @Output() event = new EventEmitter<string>();
 
-  filteredVideosInput = 'tenet';
+  filteredVideosInput = '';
 
   constructor() { }
 

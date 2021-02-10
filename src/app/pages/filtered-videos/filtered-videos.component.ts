@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 export class FilteredVideosComponent implements OnInit {
 
   imagesUrl = environment.imageUrl;
-  defaultImage = 'assets/images/jpg/defaultImage.jpg'
+  defaultImage = 'assets/images/jpg/defaultImage.jpg';
 
   filteredVideos: any = {
     results: []
