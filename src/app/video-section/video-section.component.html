@@ -4,11 +4,13 @@
 
     <ul class="video-catalogue">
 
-        <li class="video-catalogue__item">
+        <li class="video-catalogue__item" *ngFor="let movie of movies.results">
 
-            <div class="video" *ngFor="let movie of movies.results">
-
-                <img [src]="imagesUrl + movie.backdrop_path" [alt]="movie.original_title" class="video__image">
+                <img
+                    [src]="imagesUrl + movie.backdrop_path"
+                    onerror="this.src='../../assets/images/png/defaultImage.png';"
+                    [alt]="movie.original_title"
+                    class="video__image">
 
                 <div class="video__info">
 
@@ -17,8 +19,6 @@
                     <p class="video__description">{{ movie.overview | truncate : [200, '...'] }}</p>
 
                     <p class="video__year">{{ movie.release_date }}</p>
-
-                </div>
 
             </div>
 

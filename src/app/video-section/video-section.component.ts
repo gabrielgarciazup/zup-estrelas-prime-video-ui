@@ -3,11 +3,11 @@ import { environment } from 'src/environments/environment';
 import { ApiService } from '../services/api.service';
 
 @Component({
-  selector: 'app-video-catalogue',
-  templateUrl: './video-catalogue.component.html',
-  styleUrls: ['./video-catalogue.component.scss']
+  selector: 'app-video-section',
+  templateUrl: './video-section.component.html',
+  styleUrls: ['./video-section.component.scss']
 })
-export class VideoCatalogueComponent implements OnInit {
+export class VideoSectionComponent implements OnInit {
 
   @Input() sectionTitle: string;
   @Input() movies: any;
