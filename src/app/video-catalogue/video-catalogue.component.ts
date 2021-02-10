@@ -9,7 +9,7 @@ import { ApiService } from '../services/api.service';
 })
 export class VideoCatalogueComponent implements OnInit {
 
-  @Input() catalogueTitle: string;
+  @Input() sectionTitle: string;
   @Input() movies: any;
 
   imagesUrl = environment.imageUrl;

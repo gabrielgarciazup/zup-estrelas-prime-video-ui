@@ -13,7 +13,6 @@ import { StartComponent } from './pages/start/start.component';
 import { SeriesComponent } from './pages/series/series.component';
 import { MoviesComponent } from './pages/movies/movies.component';
 import { ChildrenComponent } from './pages/children/children.component';
-import { FilterPipe } from './pipes/filter.pipe';
 import { FilteredVideosComponent } from './pages/filtered-videos/filtered-videos.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -29,7 +28,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
     // pipes
     TruncatePipe,
-    FilterPipe,
 
     // pages
     StartComponent,

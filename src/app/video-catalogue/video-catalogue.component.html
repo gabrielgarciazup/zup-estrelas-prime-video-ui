@@ -1,14 +1,14 @@
 <div class="video-section">
 
+    <h1 class="video-section__title">{{ sectionTitle }}</h1>
+
     <ul class="video-catalogue">
 
-        <h1 class="video-catalogue__title">{{ catalogueTitle }}</h1>
+        <li class="video-catalogue__item">
 
-        <div class="video__container">
+            <div class="video" *ngFor="let movie of movies.results">
 
-            <li class="video" *ngFor="let movie of movies.results">
-
-                <img src="{{ imagesUrl }}{{ movie.backdrop_path }}" alt="" class="video__image">
+                <img [src]="imagesUrl + movie.backdrop_path" [alt]="movie.original_title" class="video__image">
 
                 <div class="video__info">
 
@@ -20,9 +20,9 @@
 
                 </div>
 
-            </li>
+            </div>
 
-        </div>
+        </li>
 
     </ul>
 
