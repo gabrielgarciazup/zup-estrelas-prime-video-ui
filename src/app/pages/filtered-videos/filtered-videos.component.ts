@@ -24,10 +24,10 @@ export class FilteredVideosComponent implements OnInit {
 
   filteredVideosInput
   receiveInputValue($event) {
-    this.filteredVideosInput = $event;
-    console.log(this.filteredVideosInput);
     
+    this.filteredVideosInput = $event;    
     this.getFilteredVideos();
+    
   }
 
   getFilteredVideos() {
@@ -37,8 +37,6 @@ export class FilteredVideosComponent implements OnInit {
 
         this.filteredVideos = val;
         this.amountOfVideos = this.filteredVideos.results.length;
-
-        console.log("Keyword: ", val);
 
       }, (response) => {
 

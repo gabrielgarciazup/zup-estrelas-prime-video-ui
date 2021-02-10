@@ -61,7 +61,6 @@ export class StartComponent implements OnInit {
       .subscribe((val) => {
 
         this.popularMovies = val;
-        console.log("Valor: ", val);
 
       }, (response) => {
 
@@ -77,7 +76,6 @@ export class StartComponent implements OnInit {
       .subscribe((val) => {
 
         this.topRatedMovies = val;
-        console.log("Valor: ", val);
 
       }, (response) => {
 
@@ -93,7 +91,6 @@ export class StartComponent implements OnInit {
       .subscribe((val) => {
 
         this.upcomingMovies = val;
-        console.log("Valor: ", val);
 
       }, (response) => {
 

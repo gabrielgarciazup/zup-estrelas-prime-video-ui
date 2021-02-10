@@ -45,7 +45,6 @@ export class ChildrenComponent implements OnInit {
       .subscribe((val) => {
 
         this.nowPlayingMovies = val;
-        console.log("Valor: ", val);
 
       }, (response) => {
 
@@ -61,7 +60,6 @@ export class ChildrenComponent implements OnInit {
       .subscribe((val) => {
 
         this.popularMovies = val;
-        console.log("Valor: ", val);
 
       }, (response) => {
 
@@ -77,7 +75,6 @@ export class ChildrenComponent implements OnInit {
       .subscribe((val) => {
 
         this.topRatedMovies = val;
-        console.log("Valor: ", val);
 
       }, (response) => {
 
@@ -93,7 +90,6 @@ export class ChildrenComponent implements OnInit {
       .subscribe((val) => {
 
         this.upcomingMovies = val;
-        console.log("Valor: ", val);
 
       }, (response) => {
 

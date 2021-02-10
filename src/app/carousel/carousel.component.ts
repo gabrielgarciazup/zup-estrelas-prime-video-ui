@@ -22,15 +22,12 @@ export class CarouselComponent implements OnInit {
     apiService.get("movie/popular")
       .subscribe((val) => {
 
-        console.log("Retornou ", val);
         this.data = val;
 
       }, (response) => {
 
-        console.log("Response ", response);
       }, () => {
 
-        console.log("Fim");
       });
   }
 
