@@ -45,7 +45,6 @@ export class StartComponent implements OnInit {
       .subscribe((val) => {
 
         this.nowPlayingMovies = val;
-        console.log("Valor: ", val);
 
       }, (response) => {
 

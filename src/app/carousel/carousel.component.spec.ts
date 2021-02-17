@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { CarouselComponent } from './carousel.component';
 
@@ -7,7 +8,9 @@ describe('CarouselComponent', () => {
   let fixture: ComponentFixture<CarouselComponent>;
 
   beforeEach(async () => {
+
     await TestBed.configureTestingModule({
+      imports: [ HttpClientTestingModule ],
       declarations: [ CarouselComponent ]
     })
     .compileComponents();
@@ -22,4 +25,15 @@ describe('CarouselComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('shoud get previous', () => {
+    component.getPrev();
+    expect(component.imageIndex).toBe(-1);
+  });
+
+  it('shoud get next', () => {
+    component.getNext();
+    expect(component.imageIndex).toBe(1);
+  });
+
 });

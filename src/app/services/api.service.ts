@@ -7,8 +7,8 @@ import { environment } from 'src/environments/environment';
 })
 export class ApiService {
 
-  urlBase = environment.url;
   apiKey = environment.apiKey;
+  urlBase = environment.url;
   queryBase = environment.queryBase;
 
   constructor(private http: HttpClient) { }

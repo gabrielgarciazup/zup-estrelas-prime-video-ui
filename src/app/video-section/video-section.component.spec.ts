@@ -1,25 +1,28 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
-import { VideoCatalogueComponent } from './video-section.component';
+import { VideoSectionComponent } from '../video-section/video-section.component';
 
-describe('VideoCatalogueComponent', () => {
-  let component: VideoCatalogueComponent;
-  let fixture: ComponentFixture<VideoCatalogueComponent>;
-
+describe('AppComponent', () => {
+  
   beforeEach(async () => {
+    
     await TestBed.configureTestingModule({
-      declarations: [ VideoCatalogueComponent ]
-    })
-    .compileComponents();
+      imports: [
+        RouterTestingModule,
+        HttpClientTestingModule
+      ],
+      declarations: [
+        VideoSectionComponent
+      ],
+    }).compileComponents();
   });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(VideoCatalogueComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(VideoSectionComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });
