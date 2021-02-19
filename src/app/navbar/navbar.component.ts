@@ -7,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  @Output() event = new EventEmitter<string>();
+  @Output() keyUpEvent = new EventEmitter<string>();
 
   filteredVideosInput = '';
 
@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
   }
 
   onKeyUp() {
-    this.event.emit(this.filteredVideosInput);
+    this.keyUpEvent.emit(this.filteredVideosInput);
   }
 
 }

@@ -38,10 +38,6 @@ export class FilteredVideosComponent implements OnInit {
         this.filteredVideos = val;
         this.amountOfVideos = this.filteredVideos.results.length;
 
-      }, (response) => {
-
-      }, () => {
-
       });
 
 

@@ -19,7 +19,7 @@ describe('NavbarComponent', () => {
         NavbarComponent
       ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -31,4 +31,21 @@ describe('NavbarComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should return the input on keyup', () => {
+    spyOn(component.keyUpEvent, 'emit');
+
+    component.onKeyUp();
+
+    expect(component.keyUpEvent.emit).toHaveBeenCalled();
+    expect(component.keyUpEvent.emit).toHaveBeenCalledWith(component.filteredVideosInput);
+  });
+
+  it('should not return when keyup were not called', () => {
+    spyOn(component.keyUpEvent, 'emit');
+
+    expect(component.keyUpEvent.emit).not.toHaveBeenCalled();
+    expect(component.keyUpEvent.emit).not.toHaveBeenCalledWith(component.filteredVideosInput);
+  });
+  
 });

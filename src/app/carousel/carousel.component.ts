@@ -52,6 +52,6 @@ export class CarouselComponent implements OnInit {
     }
 
     this.imageIndex = this.imageIndex + 1;
-  }
+  } 
 
 }

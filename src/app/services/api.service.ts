@@ -20,8 +20,5 @@ export class ApiService {
   getFiltered(url: string, query: string) {
     return this.http.get(this.urlBase + url + this.apiKey + this.queryBase + query);
   }
-
-  post() {
-
-  }
+  
 }
