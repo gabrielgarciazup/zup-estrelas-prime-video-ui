@@ -1,0 +1,55 @@
+<div class="auth-section">
+
+    <img src="../../../assets/images/png/amazon_prime_video_logo_blue.png" alt="Amazon Prime Video" class="auth-section__logo">
+
+    <div *ngIf="isLoading" style="text-align: center;">
+        <app-loading></app-loading>
+    </div>
+
+    <form class="auth-section__input-box"
+    #authForm="ngForm"
+    (ngSubmit)="onSubmit(authForm)"
+    *ngIf="!isLoading">
+
+        <h1>Fazer login</h1>
+
+        <p>E-mail ou número de telefone celular</p>
+        <input class="input-box__input"
+        type="email"
+        name="email"
+        ngModel
+        required
+        email>
+
+        <p>Senha</p>
+        <input class="input-box__input"
+        type="password"
+        name="password"
+        ngModel
+        required
+        minlength="6">
+
+        <button class="input-box__login"
+        type="submit"
+        [disabled]="!authForm.valid">
+        Fazer login</button>
+
+        <div class="input-box__info">
+            <div class="info__left">
+                Ao continuar, você concorda com as Condições de Uso da Amazon. Por favor verifique a Notificação de
+                Privacidade, Notificação de Cookies e a Notificação de Anúncios Baseados em Interesse.
+            </div>
+
+            <div class="info__center">
+                Novo na Amazon?
+            </div>
+        </div>
+
+        <button class="input-box__signup"
+        type="submit"
+        [disabled]="!authForm.valid">
+        Criar sua conta da Amazon</button>
+
+    </form>
+
+</div>

@@ -17,10 +17,14 @@ import { MoviesComponent } from './pages/movies/movies.component';
 import { ChildrenComponent } from './pages/children/children.component';
 import { FilteredVideosComponent } from './pages/filtered-videos/filtered-videos.component';
 import { FooterComponent } from './footer/footer.component';
+import { AuthComponent } from './pages/auth/auth.component';
+import { LoadingComponent } from './pages/loading/loading.component';
+import { AuthGuard } from './pages/auth/auth.guard';
+import { AuthService } from './pages/auth/auth.service';
 
 @NgModule({
   declarations: [
-    
+
     // components
     AppComponent,
     NavbarComponent,
@@ -36,7 +40,9 @@ import { FooterComponent } from './footer/footer.component';
     SeriesComponent,
     MoviesComponent,
     ChildrenComponent,
-    FooterComponent
+    FooterComponent,
+    AuthComponent,
+    LoadingComponent
 
   ],
   imports: [
@@ -46,7 +52,7 @@ import { FooterComponent } from './footer/footer.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

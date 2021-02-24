@@ -13,6 +13,9 @@
 
 // layout
 
+    //auth
+    @import './layout/auth';
+
     // navbar
     @import './layout/navbar';
 
@@ -24,6 +27,9 @@
 
     // footer
     @import './layout/footer';
+
+    // loading
+    @import './layout/loading';
  
 // modules
     

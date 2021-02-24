@@ -6,6 +6,8 @@ import { SeriesComponent } from './pages/series/series.component';
 import { MoviesComponent } from './pages/movies/movies.component';
 import { ChildrenComponent } from './pages/children/children.component';
 import { FilteredVideosComponent } from './pages/filtered-videos/filtered-videos.component';
+import { AuthComponent } from './pages/auth/auth.component';
+import { AuthGuard } from './pages/auth/auth.guard';
 
 const routes: Routes = [
   {
@@ -14,24 +16,33 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'auth',
+    component: AuthComponent
+  },
+  {
     path: 'home',
-    component: StartComponent
+    component: StartComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'series',
-    component: SeriesComponent
+    component: SeriesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'movies',
-    component: MoviesComponent
+    component: MoviesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'children',
-    component: ChildrenComponent
+    component: ChildrenComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'search',
-    component: FilteredVideosComponent
+    component: FilteredVideosComponent,
+    canActivate: [AuthGuard]
   }
 ];
 
