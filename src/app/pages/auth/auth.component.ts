@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class AuthComponent implements OnInit {
 
   isLoading: boolean = false;
+  isSigningUp: boolean = false;
 
   constructor(
     private authService: AuthService,
@@ -23,8 +24,13 @@ export class AuthComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  isUserSigningUp() {
+    this.isSigningUp = !this.isSigningUp;
+  }
+
   onSubmit(form: NgForm) {
 
+    const name = form.value.name;
     const email = form.value.email;
     const password = form.value.password;
 
@@ -36,7 +42,11 @@ export class AuthComponent implements OnInit {
       return;
     }
 
-    authObservable = this.authService.signin(email, password);
+    if (this.isSigningUp) {
+      authObservable = this.authService.signup(email, password);
+    } else {
+      authObservable = this.authService.signin(email, password);
+    }
 
     authObservable.subscribe(
       resData => {

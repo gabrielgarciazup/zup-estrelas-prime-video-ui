@@ -9,7 +9,7 @@
     <form class="auth-section__input-box"
     #authForm="ngForm"
     (ngSubmit)="onSubmit(authForm)"
-    *ngIf="!isLoading">
+    *ngIf="!isLoading && !isSigningUp">
 
         <h1>Fazer login</h1>
 
@@ -46,9 +46,61 @@
         </div>
 
         <button class="input-box__signup"
+        type="button"
+        (click)="isUserSigningUp()">
+        Criar sua conta da Amazon</button>
+
+    </form>
+
+    <form class="auth-section__input-box"
+    #authForm="ngForm"
+    (ngSubmit)="onSubmit(authForm)"
+    *ngIf="!isLoading && isSigningUp">
+
+        <h1>Criar conta</h1>
+
+        <p>Seu nome</p>
+        <input class="input-box__input"
+        type="text"
+        name="name"
+        ngModel
+        required>
+
+        <p>E-mail</p>
+        <input class="input-box__input"
+        type="email"
+        name="email"
+        ngModel
+        required
+        email>
+
+        <p>Senha</p>
+        <input class="input-box__input"
+        type="password"
+        name="password"
+        ngModel
+        required
+        minlength="6">
+
+        <button class="input-box__login"
         type="submit"
         [disabled]="!authForm.valid">
         Criar sua conta da Amazon</button>
+
+        <div class="input-box__info">
+            <div class="info__left">
+                Ao continuar, você concorda com as Condições de Uso da Amazon. Por favor verifique a Notificação de
+                Privacidade, Notificação de Cookies e a Notificação de Anúncios Baseados em Interesse.
+            </div>
+        </div>
+
+        <div class="input-box__info">
+            <div class="info__left">
+                Já tem uma conta? 
+                <p class="info__link"
+                (click)="isUserSigningUp()">Fazer login</p>   
+            </div>
+        </div>
 
     </form>
 
